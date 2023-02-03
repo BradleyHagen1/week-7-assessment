@@ -1,0 +1,29 @@
+tiny
+    insert: 38.9 μs
+    append: 75.3 μs
+small
+    insert: 50.3 μs
+    append: 107.9 μs
+medium
+    insert: 199.3 μs
+    append: 148.6 μs
+large
+    insert: 9.137 ms
+    append: 697.6 μs
+extra large
+    insert: 867.6514 ms
+    append: 2.6955 ms
+
+
+    Looking at the scaling of the times above it appears the append function scales
+    better than the insert function due to it staying relatively short in seconds
+    across all the arrays. The insert function starts out fairly close in time 
+    and then takes two massive jumps in time from under 200 microseconds to
+    just over 9 milliseconds and then once more takes a massive jump from 9 
+    milliseconds to 867.65 milliseconds. The scaling of the append function 
+    seems to scale better to me because the amount of time it takes appears
+    to be much more linear, where the insert function appears to take larger
+    jumps with time taken making it appear like a jagged line on a graph.
+    The reason the insert function is slower is due to it being able to 
+    modify and add specific elements at a specified index in the array/list.
+    Append just modifies and adds a specific elements to the end of the array/list.
